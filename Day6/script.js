@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom/client'
 function Counter(){
     let count=0;
 
+    function increment(){
+        
+    }
 
     return (
         <div className="first">
