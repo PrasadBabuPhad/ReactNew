@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 function Counter(){
     let count=0;
 
-    
+
     return (
         <div className="first">
             <h1>Count is:{count}</h1>
@@ -14,5 +14,6 @@ function Counter(){
         
     )
 }
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Counter/>)

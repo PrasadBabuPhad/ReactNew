@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # dependencies
 node_modules/
 
@@ -24,3 +25,9 @@ Thumbs.db
 # cache
 .parcel-cache/
 .vite/
+=======
+node_modules/
+dist/
+build/
+.parcel-cache/
+>>>>>>> c205f89e75ace7135f83569f509dcdab7df2f1a1
