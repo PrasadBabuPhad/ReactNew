@@ -27,4 +27,5 @@ function Colorful(){
    
 }
 
-export default React.memo(Colorful);
+export default Colorful;
+//export default React.memo(Colorful);
