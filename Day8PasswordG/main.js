@@ -11,13 +11,36 @@ function PasswordGenerator(){
     const[charChanged,setcharChanged] =useState(false);
 
 
+    function generatepassword(){
+        const str ="abcdefghijklmnopqrstuvwxyzABCEGHIJKLMNOPQRSTUVWXYZ";
+        if(numberChanged){
+            str+="0123456789";
+        }
+        if(charChanged){
+            str+="+_-)(*&^%$#@!:><,.;''"
+        }
+
+        let pass=""
+
+        for(let i=0;i<length;i++){
+            pass+=str[Math.floor(Math.random()*str.length)]
+        }
+
+        setPassword(pass);
+    }
+
+    useEffect(()=>{
+        generatepassword();
+    },[length,numberChanged,charChanged]);
+
+
     return(
         <>
         <div className="second">
             <h1>{Password}</h1>
 
-            <input type="range" min={5} max={15} value={length} onChange={(e)=>setLength(e.target.value)}></input>
-            <label>Length is:({length})</label>
+            <input type="range" min={5} max={25} value={length} onChange={(e)=>setLength(e.target.value)}></input>
+            <label>Length({length})</label>
 
             <input type="checkbox" defaultChecked={numberChanged} onChange={()=>setnumberChanged(!numberChanged)}></input>
             <label>Number</label>
