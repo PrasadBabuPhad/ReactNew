@@ -2,8 +2,20 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: crimson;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
+#root{
+    background-color: aliceblue;
+    height: 150px;
+    width: 450px;
+}
+
+.second{
+    font-size: 20px;
+}
