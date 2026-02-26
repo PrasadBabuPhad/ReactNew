@@ -10,11 +10,13 @@ function PasswordGenerator(){
     const [numberChanged,setnumberChanged]= useState(false);
     const[charChanged,setcharChanged] =useState(false);
 
+    
+
 
     function generatepassword(){
-        const str ="abcdefghijklmnopqrstuvwxyzABCEGHIJKLMNOPQRSTUVWXYZ";
+        let str ="abcdefghijklmnopqrstuvwxyzABCEGHIJKLMNOPQRSTUVWXYZ";
         if(numberChanged){
-            str+="0123456789";
+            str+="0123456789"
         }
         if(charChanged){
             str+="+_-)(*&^%$#@!:><,.;''"
@@ -35,6 +37,7 @@ function PasswordGenerator(){
 
 
     return(
+
         <>
         <div className="second">
             <h1>{Password}</h1>
