@@ -12,9 +12,13 @@ body{
 
 #root{
     background-color: aliceblue;
+
     height: 150px;
     width: 550px;
 }
+
+
+
 
 .second{
     font-size: 20px;
