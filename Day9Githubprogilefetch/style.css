@@ -1,0 +1,19 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#heading{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(103, 103, 227);
+}
+
+h1{
+    font-size:50px;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,36 @@
+import { useEffect,useState } from "react";
+
+
+function Body(){
+    const [Profile,setProfile]=useState([]);
+    console.log("hello");
+
+    async function generateProfile(){
+        const response =await fetch("https://api.github.com/users?per_page=10");
+        const data =await response.json(); //converts the data to json format
+
+        setProfile(data); 
+    }
+
+
+    useEffect(()=>{
+        generateProfile();
+    },[])
+
+    return (
+        <div className="profiles">
+            {
+                Profile.map((value)=>{
+                    return(<div key={value.id} className="cards">
+                        <img src={value.avatar_url}></img>
+                        <h2>{value.login}</h2>
+                        <a href={value.html_url} target="_blank">Profile</a>
+                    </div> )
+
+                })
+            }
+        </div>
+    )
+}
+
+export default Body;
