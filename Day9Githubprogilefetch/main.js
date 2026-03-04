@@ -1,7 +1,7 @@
 import React, {useCallback ,useEffect,useState} from "react";
 import ReactDOM from "react-dom/client"
-import header from "./Header"
-import body from "./Body"
+import Header from "./Header"
+import Body from "./Body"
 
 
 
@@ -10,8 +10,8 @@ function GithubProfile(){
     //Body 10 cards 
     return(
     <>
-        <header></header>
-        <body></body>
+        <Header></Header>
+        <Body></Body>
     </>
     )
 }
