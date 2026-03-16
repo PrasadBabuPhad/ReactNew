@@ -40,3 +40,22 @@ img{
     margin-top: 20px;
     margin-left: 20px;
 }
+
+.but{
+    margin-top: 20px;
+}
+
+.input{
+    margin-left: 40vw;
+    width: 200px;
+    height: 40px;
+    font-size: 25px;
+    padding-left: 2vw;
+}
+
+button{
+    height:40px;
+    background-color: rgb(100, 141, 222);
+    margin-left: 1vw;
+    color: white;
+}

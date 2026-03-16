@@ -3,11 +3,12 @@ import { useEffect,useState } from "react";
 
 function Body(){
     const [Profile,setProfile]=useState([]);
-    console.log("hello");
+    
+    const [numberofprofile,setnumberofprofile]=useState("");
    
 
-    async function generateProfile(){
-        const response =await fetch("https://api.github.com/users?per_page=10");
+    async function generateProfile(count){
+        const response =await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
         const data =await response.json(); //converts the data to json format
 
         setProfile(data); 
@@ -15,10 +16,16 @@ function Body(){
 
 
     useEffect(()=>{
-        generateProfile();
+        generateProfile(10);
     },[])
 
     return (
+
+        <div>
+            <input type="number" className="input" placeholder="search here" value={numberofprofile} onChange={(e)=>setnumberofprofile(e.target.value)}></input>
+            <button className="but" onClick={()=>generateProfile(Number(numberofprofile))}>Search Profile</button>
+
+        
         <div className="profiles">
             {
                 Profile.map((value)=>{
@@ -30,6 +37,7 @@ function Body(){
 
                 })
             }
+        </div>
         </div>
     )
 }
