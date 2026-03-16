@@ -4,6 +4,7 @@ import { useEffect,useState } from "react";
 function Body(){
     const [Profile,setProfile]=useState([]);
     console.log("hello");
+   
 
     async function generateProfile(){
         const response =await fetch("https://api.github.com/users?per_page=10");
