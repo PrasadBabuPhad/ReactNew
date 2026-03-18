@@ -19,26 +19,30 @@ import ReactDOM, { createRoot } from "react-dom/client"
 function StopWatch(){
 
     const [time,setTime]=useState(0);
+    const intervalRef=useRef(null);
 
     function start(){
-        setInterval(() => {
+        intervalRef.current=setInterval(() => {
             setTime((e)=>e+1);   /// call back function gets the (prevTime)=>prevTime+1;
         }, 1000);
     }
     function stop(){
-        
+        clearInterval(intervalRef.current);
+        intervalRef.current=null;
     }
     function reset(){
-
+        clearInterval(intervalRef.current);
+        intervalRef.current=null;
+        setTime(0)
     }
     return (
         <>
         <h1>StopWatch is:   {time}</h1>
         <button onClick={start}>Start</button><br></br>
         <br></br>
-        <button onclick={stop}>Stop</button><br></br>
+        <button onClick={stop}>Stop</button><br></br>
         <br></br>
-        <button onclick={reset}>Reset</button>
+        <button onClick={reset}>Reset</button>
         </>
     )
 }
