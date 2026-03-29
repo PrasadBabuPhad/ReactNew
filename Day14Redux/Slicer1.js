@@ -7,7 +7,7 @@ const reactslicer=createSlice({
         Increment:(e)=>{e.count=e.count+1},
         Decrement:(e)=>{e.count=e.count-1},
         Reset:(e)=>{e.count=0},
-        CustomIncreaser:(state,action) =>{state.count+=action.payload}
+        CustomIncreaser:( state,action) =>{state.count+=action.payload}
     }
 })
 
