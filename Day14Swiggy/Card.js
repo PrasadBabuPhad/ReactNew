@@ -1,4 +1,6 @@
-export default function foodItems=[
+//import { useState } from "react";
+import FoodCart from "./FoodCart";
+const foodItems=[
     {id:1,food:'Pizza',Price:"200"},
     {id:2,food:'Poha',Price:"30"},
     {id:3,food:'Pasta',Price:"120"},
@@ -11,4 +13,21 @@ export default function foodItems=[
     {id:10,food:'Puri Shrikhand',Price:"100"},
 ];
 
+export default function Card(){
 
+    
+
+    return(
+        <div style={{display:"flex",justifyContent:"center",flexWrap:"wrap",gap:"20px"
+        }}>
+            {foodItems.map((value)=>{
+                return(
+                    <div key={value.id}>
+                        <FoodCart value={value}></FoodCart>
+                    </div>
+                )
+            })}
+        </div>
+        
+    )
+}
