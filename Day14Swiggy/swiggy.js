@@ -7,7 +7,7 @@ import stores from "./stored.js"
 
 function App(){
     return(
-        <Provider>
+        <Provider store={stores}>
             <Header></Header>
             <Card></Card>
         </Provider>

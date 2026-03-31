@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { addItems } from "./slice";
+import { addItems, removeItems } from "./slice";
 import { useDispatch } from "react-redux";
 
 
@@ -8,16 +8,18 @@ export default function FoodCart({value}){
 
 
     const [inCart,setInCart] = useState(false);
-
-    cons
+    const dispatch =useDispatch();
+    
     
     
         function handleClick(){
             if(inCart){
                 setInCart(false);
+                dispatch(removeItems(value));
             }
             else{
                 setInCart(true);
+                dispatch(addItems(value));
             }
         }
         return(
